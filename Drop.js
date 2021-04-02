@@ -1,18 +1,19 @@
 class Drop {
-    constructor(x,y,r){
+    constructor(x,y){
 this.x=x;
 this.y=y;
-this.r=20;
+this.r=4;
 var options={
     'isStatic':false,
-    'friction':0.5
+    'friction':0.5,
+    'restitution':0.2
 }
-this.body=Bodies.circle(x,y,20,options)
+this.body=Bodies.circle(x,y,4,options)
 World.add(world,this.body)
     }
      updateY(){     
-        if(this.rain.position.y > 400){
-            Matter.Body.setPosition(this.rain, {x:random(0,400), y:random(0,400)})
+        if(this.body.position.y > 400){
+            Matter.Body.setPosition(this.body, {x:random(0,800), y:random(0,400)})
         }
     }
    /* display(){
@@ -27,13 +28,15 @@ World.add(world,this.body)
             fill("#1001B4");
             ellipse(0,0,this.r);
             pop();
-           
+            
     }*/
     showDrop(){
         fill("blue")
         ellipseMode(CENTER);
-        ellipse(this.rain.position.x,this.rain.position.y,this.radius,this.radius);
+        ellipse(this.body.position.x,this.body.position.y,this.r,this.r);
     }
 }
+
+
 
 
