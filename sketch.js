@@ -11,19 +11,19 @@ function preload(){
   lightning1=loadImage("1.png")
   lightning2=loadImage("2.png")
   lightning3=loadImage("3.png")
-  lightning4=loadImage("4.png")
+  lightning4=loadImage("4.png") 
   //batmanOriginals=loadSound("1966 Batman - Theme Song..mp3")
 }
 function setup() {
   engine = Engine.create();
   world = engine.world;
   createCanvas(800,600);
-  umbrella = new Umbrella(800,200)
- /* if(frameCount%100==0){
-    for(var i=0;i<maxDrops;i++){
+  umbrella = new Umbrella(400,470)
+  if(frameCount%100==0){
+    for(var i=0;i<100;i++){
       maxDrops.push(new Drop(random(0,400),(random(0,400))))
   }
-  }*/
+  }
 }
 
 function draw() {
@@ -53,11 +53,11 @@ function draw() {
 
 umbrella.display()
 
-/*for(var i = 0; i<100; i++){
+for(var i = 0; i<100; i++){
   maxDrops[i].showDrop();
   maxDrops[i].updateY()
   
-}*/
+}
   drawSprites();
 text(mouseX+","+mouseY,mouseX,mouseY)
 }
